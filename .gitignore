@@ -23,3 +23,8 @@
 hs_err_pid*
 replay_pid*
 /Grupo1TP4/nbproject/private/
+
+# NetBeans local files
+nbproject/private/
+build/
+dist/
