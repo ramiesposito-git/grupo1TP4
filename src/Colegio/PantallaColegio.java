@@ -28,21 +28,82 @@ public class PantallaColegio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        escritorio = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jmAltaAlumno = new javax.swing.JMenu();
+        jmiAltaAlumno = new javax.swing.JMenuItem();
+        jmMateria = new javax.swing.JMenu();
+        jmiAltaMateria = new javax.swing.JMenuItem();
+        jmInscripcion = new javax.swing.JMenu();
+        jmiInscripcion = new javax.swing.JMenuItem();
+        jmSalir = new javax.swing.JMenu();
+        jmiSalir = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
+        );
+
+        jmAltaAlumno.setText("Alumno");
+
+        jmiAltaAlumno.setText("Alta de Alumno");
+        jmiAltaAlumno.addActionListener(this::jmiAltaAlumnoActionPerformed);
+        jmAltaAlumno.add(jmiAltaAlumno);
+
+        jMenuBar1.add(jmAltaAlumno);
+
+        jmMateria.setText("Materia");
+
+        jmiAltaMateria.setText("Alta de Materia");
+        jmMateria.add(jmiAltaMateria);
+
+        jMenuBar1.add(jmMateria);
+
+        jmInscripcion.setText("Inscripcion");
+
+        jmiInscripcion.setText("Formulario de Inscripcion");
+        jmInscripcion.add(jmiInscripcion);
+
+        jMenuBar1.add(jmInscripcion);
+
+        jmSalir.setText("Salir");
+
+        jmiSalir.setText("Cerrar Ventana");
+        jmSalir.add(jmiSalir);
+
+        jMenuBar1.add(jmSalir);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmiAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaAlumnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiAltaAlumnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +131,15 @@ public class PantallaColegio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jmAltaAlumno;
+    private javax.swing.JMenu jmInscripcion;
+    private javax.swing.JMenu jmMateria;
+    private javax.swing.JMenu jmSalir;
+    private javax.swing.JMenuItem jmiAltaAlumno;
+    private javax.swing.JMenuItem jmiAltaMateria;
+    private javax.swing.JMenuItem jmiInscripcion;
+    private javax.swing.JMenuItem jmiSalir;
     // End of variables declaration//GEN-END:variables
 }
