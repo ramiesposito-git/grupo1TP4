@@ -4,6 +4,8 @@
  */
 package Colegio;
 
+import java.util.HashSet;
+
 /**
  *
  * @author ramir
@@ -11,10 +13,10 @@ package Colegio;
 public class PantallaColegio extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PantallaColegio.class.getName());
-
-    /**
-     * Creates new form PantallaColegio
-     */
+    
+    public static HashSet<Alumno> listaAlumno = new HashSet<>();
+    public static HashSet<Materia> listaMateria = new HashSet<>();
+    
     public PantallaColegio() {
         initComponents();
     }
@@ -63,6 +65,7 @@ public class PantallaColegio extends javax.swing.JFrame {
         jmMateria.setText("Materia");
 
         jmiAltaMateria.setText("Alta de Materia");
+        jmiAltaMateria.addActionListener(this::jmiAltaMateriaActionPerformed);
         jmMateria.add(jmiAltaMateria);
 
         jMenuBar1.add(jmMateria);
@@ -70,6 +73,7 @@ public class PantallaColegio extends javax.swing.JFrame {
         jmInscripcion.setText("Inscripcion");
 
         jmiInscripcion.setText("Formulario de Inscripcion");
+        jmiInscripcion.addActionListener(this::jmiInscripcionActionPerformed);
         jmInscripcion.add(jmiInscripcion);
 
         jMenuBar1.add(jmInscripcion);
@@ -77,6 +81,7 @@ public class PantallaColegio extends javax.swing.JFrame {
         jmSalir.setText("Salir");
 
         jmiSalir.setText("Cerrar Ventana");
+        jmiSalir.addActionListener(this::jmiSalirActionPerformed);
         jmSalir.add(jmiSalir);
 
         jMenuBar1.add(jmSalir);
@@ -104,6 +109,18 @@ public class PantallaColegio extends javax.swing.JFrame {
     private void jmiAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaAlumnoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiAltaAlumnoActionPerformed
+
+    private void jmiAltaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaMateriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiAltaMateriaActionPerformed
+
+    private void jmiInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiInscripcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiInscripcionActionPerformed
+
+    private void jmiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jmiSalirActionPerformed
 
     /**
      * @param args the command line arguments
