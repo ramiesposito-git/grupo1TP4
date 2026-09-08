@@ -4,6 +4,8 @@
  */
 package Vistas;
 
+import Colegio.Alumno;
+
 /**
  *
  * @author luuxc
@@ -57,6 +59,7 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
         BTNuevo.addActionListener(this::BTNuevoActionPerformed);
 
         BTGuardar.setText("Guardar");
+        BTGuardar.addActionListener(this::BTGuardarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,6 +138,11 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
     private void BTSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTSalirActionPerformed
         dispose();
     }//GEN-LAST:event_BTSalirActionPerformed
+
+    private void BTGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTGuardarActionPerformed
+
+        Principal.listaAlumno.add(new Alumno(Integer.parseInt(TFlegajo.getText()), TFapellido.getText(), TFnombre.getText()));
+    }//GEN-LAST:event_BTGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
