@@ -4,6 +4,8 @@
  */
 package Vistas;
 
+import Colegio.Alumno;
+
 /**
  *
  * @author luuxc
@@ -35,6 +37,18 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
         btnguardar = new javax.swing.JButton();
         btnnuevo = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        TFlegajo = new javax.swing.JTextField();
+        TFapellido = new javax.swing.JTextField();
+        TFnombre = new javax.swing.JTextField();
+        BTSalir = new javax.swing.JButton();
+        BTNuevo = new javax.swing.JButton();
+        BTGuardar = new javax.swing.JButton();
+
+        setClosable(true);
 
         lbapellido.setText("Apellido");
 
@@ -57,12 +71,39 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
         btnsalir.setText("Salir");
         btnsalir.addActionListener(this::btnsalirActionPerformed);
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel1.setText("Formulario de Alumnos");
+
+        jLabel2.setText("LEGAJO:");
+
+        jLabel3.setText("APELLIDO:");
+
+        jLabel4.setText("NOMBRE:");
+
+        TFnombre.addActionListener(this::TFnombreActionPerformed);
+
+        BTSalir.setText("Salir");
+        BTSalir.addActionListener(this::BTSalirActionPerformed);
+
+        BTNuevo.setText("Nuevo");
+        BTNuevo.addActionListener(this::BTNuevoActionPerformed);
+
+        BTGuardar.setText("Guardar");
+        BTGuardar.addActionListener(this::BTGuardarActionPerformed);
+
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -75,13 +116,34 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
                             .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btnguardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnnuevo)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnsalir)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                .addComponent(TFlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(84, 84, 84))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(22, 22, 22)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TFapellido)
+                                    .addComponent(TFnombre))))))
+                .addGap(114, 114, 114))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(BTGuardar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BTNuevo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BTSalir)
+                .addGap(21, 21, 21))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +165,28 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
                     .addComponent(btnguardar)
                     .addComponent(btnnuevo)
                     .addComponent(btnsalir))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(TFlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(TFapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(TFnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BTGuardar)
+                    .addComponent(BTSalir)
+                    .addComponent(BTNuevo))
+                .addGap(21, 21, 21))
+
         );
 
         pack();
@@ -133,6 +216,23 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsalirActionPerformed
 
+    private void TFnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFnombreActionPerformed
+
+    private void BTNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BTNuevoActionPerformed
+
+    private void BTSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_BTSalirActionPerformed
+
+    private void BTGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTGuardarActionPerformed
+
+        Principal.listaAlumno.add(new Alumno(Integer.parseInt(TFlegajo.getText()), TFapellido.getText(), TFnombre.getText()));
+    }//GEN-LAST:event_BTGuardarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnguardar;
@@ -144,5 +244,16 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtlegajo;
     private javax.swing.JTextField txtnombre;
+    private javax.swing.JButton BTGuardar;
+    private javax.swing.JButton BTNuevo;
+    private javax.swing.JButton BTSalir;
+    private javax.swing.JTextField TFapellido;
+    private javax.swing.JTextField TFlegajo;
+    private javax.swing.JTextField TFnombre;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+
     // End of variables declaration//GEN-END:variables
 }

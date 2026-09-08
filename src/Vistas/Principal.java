@@ -107,7 +107,9 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaAlumnoActionPerformed
-        // TODO add your handling code here:
+        VistaAlumnos va = new VistaAlumnos();
+        escritorio.add(va);
+        va.setVisible(true);
     }//GEN-LAST:event_jmiAltaAlumnoActionPerformed
 
     private void jmiAltaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaMateriaActionPerformed
