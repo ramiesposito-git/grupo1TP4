@@ -250,12 +250,24 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
 
     private void BTGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTGuardarActionPerformed
 
-        Principal.listaAlumno.add(new Alumno(Integer.parseInt(TFlegajo.getText()), TFapellido.getText(), TFnombre.getText()));
+        try {
 
-        JOptionPane.showMessageDialog(this, "El alumno "+TFnombre.getText()+" "+TFapellido.getText()+"\nfue agregado con exito!");
-        TFapellido.setText("");
-        TFlegajo.setText("");
-        TFnombre.setText("");
+            if (!TFlegajo.getText().isEmpty() || !TFnombre.getText().isEmpty() || !TFapellido.getText().isEmpty()) {
+                Principal.listaAlumno.add(new Alumno(Integer.parseInt(TFlegajo.getText()), TFapellido.getText(), TFnombre.getText()));
+                JOptionPane.showMessageDialog(this, "El alumno " + TFnombre.getText() + " " + TFapellido.getText() + "\nfue agregado con exito!");
+
+                TFapellido.setText("");
+                TFlegajo.setText("");
+                TFnombre.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "Rellene todos los campos!");
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "ingrese datos validos");
+        }
+
+
     }//GEN-LAST:event_BTGuardarActionPerformed
 
     private void TFnombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFnombre1ActionPerformed
