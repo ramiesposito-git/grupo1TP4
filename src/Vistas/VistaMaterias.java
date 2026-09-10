@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import Colegio.Materia;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author luuxc
@@ -29,12 +32,12 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         lbCodigoMateria = new javax.swing.JLabel();
         lbNombreMateria = new javax.swing.JLabel();
         lbAñoPertenece = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        tfcodigoMateria = new javax.swing.JTextField();
+        tfnombreMateria = new javax.swing.JTextField();
+        tfañoPertenece = new javax.swing.JTextField();
+        btnsalir = new javax.swing.JButton();
+        btnguardar = new javax.swing.JButton();
+        btnnuevo = new javax.swing.JButton();
 
         lbCodigoMateria.setText("Codigo De Materia :");
 
@@ -42,14 +45,16 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
 
         lbAñoPertenece.setText("Año Al Que Pertenece :");
 
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        tfcodigoMateria.addActionListener(this::tfcodigoMateriaActionPerformed);
 
-        jButton1.setText("Salir");
+        btnsalir.setText("Salir");
+        btnsalir.addActionListener(this::btnsalirActionPerformed);
 
-        jButton2.setText("Guardar");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
+        btnguardar.setText("Guardar");
+        btnguardar.addActionListener(this::btnguardarActionPerformed);
 
-        jButton3.setText("Nuevo");
+        btnnuevo.setText("Nuevo");
+        btnnuevo.addActionListener(this::btnnuevoActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,16 +70,16 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
                             .addComponent(lbAñoPertenece, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)))
+                            .addComponent(tfcodigoMateria)
+                            .addComponent(tfnombreMateria)
+                            .addComponent(tfañoPertenece, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jButton2)
+                        .addComponent(btnguardar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(btnnuevo)
                         .addGap(26, 26, 26)
-                        .addComponent(jButton1)))
+                        .addComponent(btnsalir)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,45 +88,73 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCodigoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfcodigoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbNombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfnombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbAñoPertenece, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfañoPertenece, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tfcodigoMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfcodigoMateriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tfcodigoMateriaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+        try {
+            if (!tfcodigoMateria.getText().isEmpty() && !tfnombreMateria.getText().isEmpty() && !tfañoPertenece.getText().isEmpty()) {
+                int id = Integer.parseInt(tfcodigoMateria.getText());
+                String nom = tfnombreMateria.getText();
+                int año = Integer.parseInt(tfañoPertenece.getText());
+                
+                Materia m = new Materia(id, nom, año);
+                Principal.listaMateria.add(m);
+                
+                JOptionPane.showMessageDialog(this, "La materia " + nom + " fue agregada con éxito!");
+
+                tfcodigoMateria.setText("");
+                tfnombreMateria.setText("");
+                tfañoPertenece.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "Rellene todos los campos!");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese datos numéricos válidos para el código y el año.");
+        }
+    }//GEN-LAST:event_btnguardarActionPerformed
+
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnsalirActionPerformed
+
+    private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
+        tfcodigoMateria.setText("");
+        tfnombreMateria.setText("");
+        tfañoPertenece.setText("");
+    }//GEN-LAST:event_btnnuevoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton btnguardar;
+    private javax.swing.JButton btnnuevo;
+    private javax.swing.JButton btnsalir;
     private javax.swing.JLabel lbAñoPertenece;
     private javax.swing.JLabel lbCodigoMateria;
     private javax.swing.JLabel lbNombreMateria;
-    private javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField tfañoPertenece;
+    private javax.swing.JTextField tfcodigoMateria;
+    private javax.swing.JTextField tfnombreMateria;
     // End of variables declaration//GEN-END:variables
 }
