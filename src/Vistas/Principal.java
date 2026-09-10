@@ -117,7 +117,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiAltaMateriaActionPerformed
 
     private void jmiInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiInscripcionActionPerformed
-        // TODO add your handling code here:
+        VistaInscripcion va = new VistaInscripcion();
+        escritorio.add(va);
+        va.setVisible(true);
     }//GEN-LAST:event_jmiInscripcionActionPerformed
 
     private void jmiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSalirActionPerformed
