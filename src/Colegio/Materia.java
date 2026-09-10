@@ -41,6 +41,9 @@ public class Materia {
         this.año = año;
     }
     
-    
+    @Override
+    public String toString() {
+        return nombre + " -" +año;
+    }
     
 }
