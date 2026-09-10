@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package Vistas;
 
 import Colegio.Materia;
+import java.util.HashSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,12 +10,14 @@ import javax.swing.JOptionPane;
  * @author luuxc
  */
 public class VistaMaterias extends javax.swing.JInternalFrame {
+    private HashSet<Materia> listaMaterias;
 
     /**
      * Creates new form VistaAlumnos
      */
     public VistaMaterias() {
         initComponents();
+        this.listaMaterias = listaMaterias;
     }
 
     /**
@@ -34,7 +34,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         lbAñoPertenece = new javax.swing.JLabel();
         tfcodigoMateria = new javax.swing.JTextField();
         tfnombreMateria = new javax.swing.JTextField();
-        tfañoPertenece = new javax.swing.JTextField();
+        tfanioPertenece = new javax.swing.JTextField();
         btnsalir = new javax.swing.JButton();
         btnguardar = new javax.swing.JButton();
         btnnuevo = new javax.swing.JButton();
@@ -46,6 +46,8 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         lbAñoPertenece.setText("Año Al Que Pertenece :");
 
         tfcodigoMateria.addActionListener(this::tfcodigoMateriaActionPerformed);
+
+        tfanioPertenece.addActionListener(this::tfanioPerteneceActionPerformed);
 
         btnsalir.setText("Salir");
         btnsalir.addActionListener(this::btnsalirActionPerformed);
@@ -72,7 +74,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tfcodigoMateria)
                             .addComponent(tfnombreMateria)
-                            .addComponent(tfañoPertenece, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)))
+                            .addComponent(tfanioPertenece, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(btnguardar)
@@ -96,7 +98,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbAñoPertenece, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfañoPertenece, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfanioPertenece, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -114,19 +116,19 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
         try {
-            if (!tfcodigoMateria.getText().isEmpty() && !tfnombreMateria.getText().isEmpty() && !tfañoPertenece.getText().isEmpty()) {
+            if (!tfcodigoMateria.getText().isEmpty() && !tfnombreMateria.getText().isEmpty() && !tfanioPertenece.getText().isEmpty()) {
                 int id = Integer.parseInt(tfcodigoMateria.getText());
                 String nom = tfnombreMateria.getText();
-                int año = Integer.parseInt(tfañoPertenece.getText());
+                int anio = Integer.parseInt(tfanioPertenece.getText());
                 
-                Materia m = new Materia(id, nom, año);
+                Materia m = new Materia(id, nom, anio);
                 Principal.listaMateria.add(m);
                 
                 JOptionPane.showMessageDialog(this, "La materia " + nom + " fue agregada con éxito!");
 
                 tfcodigoMateria.setText("");
                 tfnombreMateria.setText("");
-                tfañoPertenece.setText("");
+                tfanioPertenece.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "Rellene todos los campos!");
             }
@@ -142,8 +144,12 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
         tfcodigoMateria.setText("");
         tfnombreMateria.setText("");
-        tfañoPertenece.setText("");
+        tfanioPertenece.setText("");
     }//GEN-LAST:event_btnnuevoActionPerformed
+
+    private void tfanioPerteneceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfanioPerteneceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfanioPerteneceActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -153,7 +159,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lbAñoPertenece;
     private javax.swing.JLabel lbCodigoMateria;
     private javax.swing.JLabel lbNombreMateria;
-    private javax.swing.JTextField tfañoPertenece;
+    private javax.swing.JTextField tfanioPertenece;
     private javax.swing.JTextField tfcodigoMateria;
     private javax.swing.JTextField tfnombreMateria;
     // End of variables declaration//GEN-END:variables

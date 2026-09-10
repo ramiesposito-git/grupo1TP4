@@ -32,7 +32,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="tfcodigoMateria" max="32767" attributes="0"/>
                           <Component id="tfnombreMateria" max="32767" attributes="0"/>
-                          <Component id="tfañoPertenece" pref="208" max="32767" attributes="0"/>
+                          <Component id="tfanioPertenece" pref="208" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -64,7 +64,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbAñoPertenece" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="tfañoPertenece" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfanioPertenece" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -100,7 +100,10 @@
     </Component>
     <Component class="javax.swing.JTextField" name="tfnombreMateria">
     </Component>
-    <Component class="javax.swing.JTextField" name="tfa&#xf1;oPertenece">
+    <Component class="javax.swing.JTextField" name="tfanioPertenece">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfanioPerteneceActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnsalir">
       <Properties>
