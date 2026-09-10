@@ -4,17 +4,23 @@
  */
 package Vistas;
 
+import Colegio.Alumno;
+import Colegio.Materia;
+import java.util.HashSet;
+
 /**
  *
  * @author luuxc
  */
 public class VistaInscripcion extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form VistaAlumnos
-     */
-    public VistaInscripcion() {
+    private HashSet<Alumno> alumnos;
+    private HashSet<Materia> materias;
+    public VistaInscripcion(HashSet<Alumno> alumnos, HashSet<Materia> Materias) {
         initComponents();
+        
+        this.alumnos = alumnos;
+        this.materias = materias;
     }
 
     /**
@@ -106,7 +112,7 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cmbMateriaActionPerformed
 
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnInscribirActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

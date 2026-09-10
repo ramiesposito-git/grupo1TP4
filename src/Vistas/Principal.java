@@ -119,7 +119,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiAltaMateriaActionPerformed
 
     private void jmiInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiInscripcionActionPerformed
-        VistaInscripcion va = new VistaInscripcion();
+        VistaInscripcion va = new VistaInscripcion(Principal.listaAlumno, Principal.listaMateria);
         escritorio.add(va);
         va.setVisible(true);
     }//GEN-LAST:event_jmiInscripcionActionPerformed
