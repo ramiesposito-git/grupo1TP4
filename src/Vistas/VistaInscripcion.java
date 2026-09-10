@@ -14,13 +14,11 @@ import java.util.HashSet;
  */
 public class VistaInscripcion extends javax.swing.JInternalFrame {
 
-    private HashSet<Alumno> alumnos;
-    private HashSet<Materia> materias;
+
+
     public VistaInscripcion(HashSet<Alumno> alumnos, HashSet<Materia> Materias) {
         initComponents();
-        
-        this.alumnos = alumnos;
-        this.materias = materias;
+        cargarComboBox();
     }
 
     /**
@@ -47,11 +45,6 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         lblFormInscripcion.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblFormInscripcion.setText("Formulario de Inscripcion");
 
-        cmbMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cmbMateria.addActionListener(this::cmbMateriaActionPerformed);
-
-        cmbAlumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         btnInscribir.setText("Inscribir");
         btnInscribir.addActionListener(this::btnInscribirActionPerformed);
 
@@ -70,19 +63,19 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
                             .addComponent(lblMateria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmbMateria, 0, 149, Short.MAX_VALUE)
+                            .addComponent(cmbAlumno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addComponent(lblFormInscripcion)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnInscribir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,12 +100,9 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMateriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbMateriaActionPerformed
-
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
-        
+
+
     }//GEN-LAST:event_btnInscribirActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -123,10 +113,25 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInscribir;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> cmbAlumno;
-    private javax.swing.JComboBox<String> cmbMateria;
+    private javax.swing.JComboBox<Alumno> cmbAlumno;
+    private javax.swing.JComboBox<Materia> cmbMateria;
     private javax.swing.JLabel lblAlumno;
     private javax.swing.JLabel lblFormInscripcion;
     private javax.swing.JLabel lblMateria;
     // End of variables declaration//GEN-END:variables
+    
+    private void cargarComboBox(){
+        
+        
+        for (Alumno alumno : Principal.listaAlumno) {
+            cmbAlumno.addItem(alumno);
+        }
+        
+        for (Materia materia : Principal.listaMateria) {
+            cmbMateria.addItem(materia);
+        }
+    
+    }
+
+
 }

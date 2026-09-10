@@ -57,7 +57,7 @@ public class Alumno {
 
         if (materias.contains(m)) {
             System.out.println("Ya estas inscripto a \""+m.getNombre()+"\" intenta con otra materia.");
-        } else{materias.add(m);}
+        } else{materias.add(m); System.out.println("Te inscribiste a "+ m.getNombre() +" correctamente!");}
 
     }
 
@@ -68,7 +68,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "legajo=" + legajo + ", apellido=" + apellido + ", nombre=" + nombre + ", materias=" + materias + '}';
+        return apellido+" "+nombre+" - "+legajo;
     }
 
 }
