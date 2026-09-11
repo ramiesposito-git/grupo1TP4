@@ -7,6 +7,8 @@ package Vistas;
 import Colegio.Alumno;
 import Colegio.Materia;
 import java.util.HashSet;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -16,7 +18,7 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
 
 
 
-    public VistaInscripcion(HashSet<Alumno> alumnos, HashSet<Materia> Materias) {
+    public VistaInscripcion(HashSet listaAlumno, HashSet listaMateria) {
         initComponents();
         cargarComboBox();
     }
@@ -101,8 +103,12 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
-
-
+        Alumno a = (Alumno) cmbAlumno.getSelectedItem();
+        Materia m = (Materia) cmbMateria.getSelectedItem();
+        
+        a.agregarMateria(m);
+        
+        JOptionPane.showMessageDialog(this, "Alumno Inscripto correctamente");
     }//GEN-LAST:event_btnInscribirActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -132,6 +138,5 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         }
     
     }
-
-
+    
 }
